@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>init</name>
+			<packageName></packageName>
+			<script>if not MUME then MUME = {} end</script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>leader</name>
+				<packageName></packageName>
+				<script>if not MUME.leader then
+  MUME.leader = "Gandalf"
+end
+</script>
+				<eventHandlerList />
+			</Script>
+			<Script isActive="yes" isFolder="no">
+				<name>autoride</name>
+				<packageName></packageName>
+				<script>if not MUME.autoride then
+  MUME.autoride = "off"
+end</script>
+				<eventHandlerList />
+			</Script>		
+		</Script>
+	</ScriptPackage>
+</MudletPackage>
