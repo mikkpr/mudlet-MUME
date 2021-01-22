@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.001">
+	<AliasPackage>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>auto</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>toggle autoride</name>
+				<script>if MUME.autoride == "on" then
+  MUME.autoride = "off"
+else
+  MUME.autoride = "on"
+end
+
+print("Autoride: [ " .. MUME.autoride .. " ]")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^ar$</regex>
+			</Alias>
+		</AliasGroup>
+	</AliasPackage>
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>leader</name>
+			<script>local leader = matches[3]
+
+if not MUME then MUME = {} end
+if not MUME.leader then
+  MUME.leader = "Gandalf"
+end
+
+if not leader then
+  cecho("You are following &lt;white&gt;" .. MUME.leader .. "&lt;reset&gt;.\n")
+else
+  cecho("You are now following &lt;white&gt;" .. leader .. "&lt;reset&gt;.\n")
+  MUME.leader = leader
+end</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^leader( (.*))?$</regex>
+		</Alias>
+	</AliasPackage>
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>init</name>
+			<packageName></packageName>
+			<script>if not MUME then MUME = {} end</script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>leader</name>
+				<packageName></packageName>
+				<script>if not MUME.leader then
+  MUME.leader = "Gandalf"
+end
+</script>
+				<eventHandlerList />
+			</Script>
+			<Script isActive="yes" isFolder="no">
+				<name>autoride</name>
+				<packageName></packageName>
+				<script>if not MUME.autoride then
+  MUME.autoride = "off"
+end</script>
+				<eventHandlerList />
+			</Script>		
+		</Script>
+	</ScriptPackage>
 	<TriggerPackage>
 		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 			<name>Group</name>
