@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>XP counter</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Gain xp</name>
+				<script>expandAlias("xpinfo", false)</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>You receive your share of experience.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Capture and calculate</name>
+				<script>deleteLine()
+local neededXP = tonumber(matches[2])
+local totalXP = tonumber(matches[3])
+local neededTP = tonumber(matches[4])
+local totalTP = tonumber(matches[5])
+local session = tonumber(matches[6])
+local gainedXP, gainedTP, sessionXP, sessionTP
+
+XPCounter["neededXP"] = neededXP
+XPCounter["neededTP"] = neededTP
+
+if XPCounter["totalXP"] == 0 then
+  gainedXP = 0
+else
+  gainedXP = totalXP - XPCounter["totalXP"]
+end
+
+if XPCounter["totalTP"] == 0 then
+  gainedTP = 0
+else
+  gainedTP = totalTP - XPCounter["totalTP"]
+end
+
+sessionXP = gainedXP + XPCounter["sessionXP"]
+sessionTP = gainedTP + XPCounter["sessionTP"]
+
+XPCounter["sessionXP"] = sessionXP
+XPCounter["sessionTP"] = sessionTP
+
+XPCounter["totalXP"] = totalXP
+XPCounter["totalTP"] = totalTP
+
+local XPrate = (sessionXP / session) * 60
+local TPrate = (sessionTP / session) * 60
+
+if gainedXP &gt; 0 or gainedTP &gt; 0 then
+hecho(string.format([[
+
+  #666666Gained XP: #ffffff%s   #666666Gained TP: #ffffff%s
+     #666666XP TNL: #ffffff%s      #666666TP TNL: #ffffff%s
+    #666666XP rate: #ffffff%s#666666/h SessionTP: #ffffff%s
+
+]],
+string.rpad(""..gainedXP, 8, ' '),
+string.rpad(""..gainedTP, 8, ' '),
+string.rpad(""..neededXP, 8, ' '),
+string.rpad(""..neededTP, 8, ' '),
+string.rpad(""..math.ceil(XPrate), 8, ' '),
+string.rpad(""..sessionTP, 8, ' ')
+))
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^XPCOUNTER (\d+) (\d+) (\d+) (\d+) (\d+)$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+	</TriggerPackage>
+	<TimerPackage />
+	<AliasPackage>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>XP counter</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>xpreset</name>
+				<script>XPCounter = {
+  ["totalXP"] = 0,
+  ["neededXP"] = 0,
+  ["totalTP"] = 0,
+  ["neededTP"] = 0,
+  ["session"] = 0,
+  ["sessionXP"] = 0,
+  ["sessionTP"] = 0,
+}
+
+expandAlias("xpinfo", false)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^xpreset$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>xpinfo</name>
+				<script>send("info XPCOUNTER %X %x %T %t %L", false)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^xpinfo$</regex>
+			</Alias>
+		</AliasGroup>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>XP Counter</name>
+			<packageName></packageName>
+			<script>XPCounter = {
+  ["totalXP"] = 0,
+  ["neededXP"] = 0,
+  ["totalTP"] = 0,
+  ["neededTP"] = 0,
+  ["sessionXP"] = 0,
+  ["sessionTP"] = 0,
+  ["session"] = 0
+}</script>
+			<eventHandlerList />
+		</Script>
+	</ScriptPackage>
+	<KeyPackage />
+	<HelpPackage>
+		<helpURL></helpURL>
+	</HelpPackage>
+</MudletPackage>

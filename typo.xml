@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Typo</name>
+			<script>local cmd = matches[2]
+
+typo = cmd
+echo(" [Y]")</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^I do not understand that command. Did you mean \"(.*)\" \?$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+	</TriggerPackage>
+	<TimerPackage />
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>Typo</name>
+			<script>if typo then
+  send(typo)
+end</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^y$</regex>
+		</Alias>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>init</name>
+			<packageName></packageName>
+			<script>if not MUME then MUME = {} end</script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>typo</name>
+				<packageName></packageName>
+				<script>if not typo then typo = nil end</script>
+				<eventHandlerList />
+			</Script>
+		</Script>
+	</ScriptPackage>
+	<KeyPackage />
+	<HelpPackage>
+		<helpURL></helpURL>
+	</HelpPackage>
+</MudletPackage>
