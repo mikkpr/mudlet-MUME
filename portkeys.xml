@@ -51,7 +51,7 @@ if (args == nil) or (args == "") then
   - out              - quickport to key 'out'
   - out &lt;name/key&gt;   - set key 'out'
   - _tp &lt;name&gt;
-  - _port &lt;name&gt;
+  - _port &lt;name&gt; &lt;dir&gt;
   - _watch &lt;name&gt;
   - _scry &lt;name&gt;
   ]])
@@ -125,7 +125,12 @@ send("cast 'teleport' " .. key)</script>
 			<Alias isActive="yes" isFolder="no">
 				<name>portal to key</name>
 				<script>local name = matches[3] or ""
-local dir = matches[4]
+local dir = matches[5]
+
+if not dir then
+  print("  Invalid direction. _port &lt;name&gt; &lt;dir&gt;")
+  return
+end
 
 local key = Locations[name]
 
@@ -138,7 +143,7 @@ print("  Portal to '" .. name .. "'...")
 send("cast 'portal' " .. dir .. " " .. key)</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>^_port(al)? (\w+) (up|down|west|east|north|south)$</regex>
+				<regex>^_port(al)? (\w+)( (up|down|west|east|north|south)?)?$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>scry key</name>
