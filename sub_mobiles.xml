@@ -310,6 +310,11 @@
   ["A female Ohurk-uai cook is here, planning to prepare the next meal"] = "An Ohurk-uai cook",
   ["The spirit of a mighty warrior greets you with an evil laughter"] = "An undead chieftain",
   ["A powerful, squat orc captain eyes you with contempt and scorn"] = "&lt;firebrick&gt;Vurgl the Orkish captain",
+  ["A hateful wraith glares at you and groans in torment"] = "A trapped wraith",
+  ["A moaning ghost advances towards you, shimmering with a pale light"] = "A ghost",
+  ["A deft, young orc monitors the area, ready to attack any enemy"] = "A  green-cloaked Durbûk-hai archer",
+  ["A dreadful hill troll with a skin full of warts is standing here"] = "A warty troll",
+  ["A black raven flies in the sky searching for flesh to prey upon"] = "A black raven",
 }
 
 local str = matches[2]:gsub(" %(.*%)", ""):gsub("%.$", "")
