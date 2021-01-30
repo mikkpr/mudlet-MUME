@@ -143,7 +143,7 @@ print("  Portal to '" .. name .. "'...")
 send("cast 'portal' " .. dir .. " " .. key)</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>^_port(al)? (\w+)( (up|down|west|east|north|south)?)?$</regex>
+				<regex>^_port(al)? (\w+)( (up|down|west|east|north|south|s|e|n|w|u|d)?)?$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>scry key</name>
