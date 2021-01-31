@@ -155,8 +155,10 @@
 				<string> sharp thorn</string>
 				<string>yew longbow</string>
 				<string>black horn shortbow</string>
+				<string>a mighty dwarven axe</string>
 			</regexCodeList>
 			<regexCodePropertyList>
+				<integer>0</integer>
 				<integer>0</integer>
 				<integer>0</integer>
 				<integer>0</integer>

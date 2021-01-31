@@ -4,7 +4,8 @@
 	<TriggerPackage>
 		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 			<name>Mobs</name>
-			<script>local subs = {
+			<script>local prefix = "!  "
+local subs = {
   ["A disgusting forest troll is searching for fresh meat here"] = "An ugly forest troll",
   ["A brutish forest troll is hunting here, looking for some tasty flesh"] = "A brutish forest troll",
   ["A large mother hawk is here looking for prey to feed her young"] = "A large hawk",
@@ -322,7 +323,7 @@ local match = subs[str]
 
 if match then
   selectString(matches[2], 1)
-  creplace(string.format("&lt;white&gt;!  &lt;ansiLightBlack&gt;%s is here&lt;reset&gt;", match))
+  creplace(string.format("&lt;white&gt;%s&lt;ansiLightBlack&gt;%s is here&lt;reset&gt;", prefix, match))
   deselect()
   local aura = matches[2]:match("%(.*%)")
   if aura then echo(" ");echo(aura) end
@@ -341,7 +342,7 @@ temp = temp or string.match(matches[2], "An? (.*) is sleeping here")
 temp = temp or string.match(matches[2], "An? (.*) is lying here,")
 temp = temp or string.match(matches[2], "An? (.*) is standing here")
 if temp then
-  cinsertText("&lt;white&gt;!  &lt;ansiLightBlack&gt;")
+  cinsertText(string.format("&lt;white&gt;%s&lt;ansiLightBlack&gt;", prefix))
   return
 end
 
