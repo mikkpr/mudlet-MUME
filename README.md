@@ -20,6 +20,8 @@ Similarly, Autoassist will `assist` whenever your leader deals damage.
 
 NB! Triggers like these are not allowed in PK!
 
+Note that both modules add a `leader` alias, so you can remove one
+
 ### Equipment
 
 Highlights notable pieces of equipment
