@@ -6,12 +6,27 @@
 	<AliasPackage>
 		<Alias isActive="yes" isFolder="no">
 			<name>ofht</name>
-			<script>local num = matches[2] or "1"
+			<script>local num = matches[4] or "1"
 
-send("order followers hit " .. num .. "." .. MUME.target)</script>
+local action
+if matches[2] == "h" then
+  action = "hit"
+else
+  action = "bash"
+end
+
+local target
+if matches[3] == "t" then
+  target = MUME.target
+else
+  target = MUME.mount
+end
+
+local cmd = string.format("order followers %s %s.%s", action, num, target)
+send(cmd)</script>
 			<command></command>
 			<packageName></packageName>
-			<regex>^ofht([0-9])*$</regex>
+			<regex>^of(h|b)(t|m)([0-9])*$</regex>
 		</Alias>
 		<Alias isActive="yes" isFolder="no">
 			<name>shoot + escape</name>

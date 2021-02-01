@@ -27,6 +27,56 @@ _NB! Triggers like these are not allowed in PK!_
 
 Note that all of these modules add a `leader` alias, so you can remove the one you don't want
 
+### Combat
+Adds combat aliases and target management.
+
+- `target <name>` or `x <name>` sets the `target` variable to `<name>`
+- `mount <name>` sets the `mount` variable to `<name>`
+- `target`, `x` and `mount` without arguments display the current values
+- `telf`, `torc`, `tdwa`, `ttro`, `thob`, `thelf`, `tman` set PK targets, e.g `telf` -> `target *elf*`
+- `ht` -> `hit $target` 
+- `bst` -> `backstab $target` 
+- `sht` -> `shoot $target` 
+- `bt` -> `bash $target` 
+- `bdt` -> `bash disengage $target` 
+- `kt` -> `kill $target` 
+- `tt` -> `track $target` 
+- `wt` -> `where $target`
+- similarly, `hm` / `bm` etc. work for `$mount`, e.g. `tm` -> `track $mount`
+- an optional index can also be provided by just appending a number to the command:
+  - `bst2` -> `backstab 2.$target`
+- backstab/shoot + escape:
+  - `bs` + `<dir>` + `<num>` (optional), e.g. `bse2` -> `e; backstab 2.$target; escape west`
+  - `sh` + `<dir>` + `<num>` (optional), e.g. `she2` -> `e; shoot 2.$target; escape west`
+- charmies:
+  - `of` + `h|b` + `t|m` + `<num>` (optional), e.g. `ofbt2` -> `order followers bash 2.$target`
+
+### Spells
+Adds aliases to set casting speed and current spell
+- `spell <name>` Sets the current spell as `<name>`
+- `spell` without arguments displays the current spell
+- `ss` + `q|f|n|c|t` sets the spell $speed, e.g. `ssq` sets $speed to `quickly`
+- `speed ` + `q|f|n|c|t` works similarly, e.g. `speed n` is the same as `ssn`
+- `speed` without arguments displays the current $speed
+- Quick set aliases:
+  - `spha` -> `spell harm`
+  - `splb` -> `spell lightning bolt`
+  - `spbh` -> `spell burning hands`
+  - `spfb` -> `spell fireball`
+  - `spbl` -> `spell blindness`
+  - `spsl` -> `spell sleep`
+  - `spcs` -> `spell colour spray`
+  - `spde` -> `spell dispel evil`
+  - `speq` -> `spell earthquake`
+- Casting:
+  - `s` + `t|m` + `<num>` (optional), e.g. `sm2` -> `cast $speed '$spell' 2.$mount`
+  - `sp` -> `cast $speed '$spell'`
+  - `sp` + `<name>`, e.g. `sp 3.guard` -> `cast $speed '$spell' 3.guard`
+
+### Communication panels 
+This script opens two horizontal panels at the top for tells and narrates/prays, respectively.
+The font/fontsize can be configured in the script.
+
 ### Equipment
 
 Highlights notable pieces of equipment

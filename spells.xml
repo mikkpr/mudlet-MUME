@@ -16,11 +16,15 @@ local speeds = {
   ["t"] = "thoroughly",
 }
 
-echo(string.format("    [ speed: %s ]\n", speeds[speed]))
-MUME.speed = speeds[speed]</script>
+if speed then
+  MUME.speed = speeds[speed]
+end
+
+echo(string.format("    [ speed: %s ]\n", MUME.speed))
+</script>
 			<command></command>
 			<packageName></packageName>
-			<regex>^ss(q|f|n|c|t)$</regex>
+			<regex>^ss(q|f|n|c|t)$|^speed$</regex>
 		</Alias>
 		<Alias isActive="yes" isFolder="no">
 			<name>set spell</name>
@@ -32,7 +36,7 @@ end
 echo(string.format("    [ spell: '%s' ]\n", MUME.spell or ""))</script>
 			<command></command>
 			<packageName></packageName>
-			<regex>^spell (.+)|spell$</regex>
+			<regex>^spell (.+)$|^spell$</regex>
 			<Alias isActive="yes" isFolder="no">
 				<name>set spell</name>
 				<script>switch({
@@ -101,6 +105,13 @@ send(command)
 				<packageName></packageName>
 				<script>if not MUME.spell then MUME.spell = "lightning bolt" end
 if not MUME.speed then MUME.speed = "normally" end</script>
+				<eventHandlerList />
+			</Script>
+			<Script isActive="yes" isFolder="no">
+				<name>target</name>
+				<packageName></packageName>
+				<script>if not MUME.target then MUME.target = "orc" end
+if not MUME.mount then MUME.mount = "warg" end</script>
 				<eventHandlerList />
 			</Script>
 		</Script>
