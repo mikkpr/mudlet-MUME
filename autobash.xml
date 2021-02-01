@@ -2,9 +2,11 @@
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.001">
 	<TriggerPackage>
-		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-			<name>autoassist</name>
-			<script></script>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>autobash</name>
+			<script>if MUME.autobash == "off" then return end
+
+send("bash")</script>
 			<triggerType>0</triggerType>
 			<conditonLineDelta>0</conditonLineDelta>
 			<mStayOpen>0</mStayOpen>
@@ -15,51 +17,30 @@
 			<mSoundFile></mSoundFile>
 			<colorTriggerFgColor>#000000</colorTriggerFgColor>
 			<colorTriggerBgColor>#000000</colorTriggerBgColor>
-			<regexCodeList />
-			<regexCodePropertyList />
-			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-				<name>autoassist</name>
-				<script>if MUME.autoassist == "off" then return end
-
-local who = string.lower(matches[2])
-
-local comp = string.lower(MUME.leader)
-if comp == who then
-  send("assist")
-end</script>
-				<triggerType>0</triggerType>
-				<conditonLineDelta>0</conditonLineDelta>
-				<mStayOpen>0</mStayOpen>
-				<mCommand></mCommand>
-				<packageName></packageName>
-				<mFgColor>#ff0000</mFgColor>
-				<mBgColor>#ffff00</mBgColor>
-				<mSoundFile></mSoundFile>
-				<colorTriggerFgColor>#000000</colorTriggerFgColor>
-				<colorTriggerBgColor>#000000</colorTriggerBgColor>
-				<regexCodeList>
-					<string>^(\w+) (strongly )?(slashes|stabs|cleaves|pierces|hits|crushes|shoots)</string>
-				</regexCodeList>
-				<regexCodePropertyList>
-					<integer>1</integer>
-				</regexCodePropertyList>
-			</Trigger>
-		</TriggerGroup>
+			<regexCodeList>
+				<string>^(.*) seems? to have recovered .* senses.$</string>
+				<string>^As (.*) avoids? your bash, you topple over and lose your balance.$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
 	</TriggerPackage>
 	<TimerPackage />
 	<AliasPackage>
 		<Alias isActive="yes" isFolder="no">
-			<name>toggle autoassist</name>
-			<script>if MUME.autoassist == "on" then
-  MUME.autoassist = "off"
+			<name>toggle autobash</name>
+			<script>if MUME.autobash == "on" then
+  MUME.autobash = "off"
 else
-  MUME.autoassist = "on"
+  MUME.autobash = "on"
 end
 
-print("Autoassist: [ " .. MUME.autoassist .. " ]")</script>
+print("Autobash: [ " .. MUME.autobash .. " ]")</script>
 			<command></command>
 			<packageName></packageName>
-			<regex>^aa$</regex>
+			<regex>^ab$</regex>
 		</Alias>
 		<Alias isActive="yes" isFolder="no">
 			<name>leader</name>
@@ -98,10 +79,10 @@ end
 				<eventHandlerList />
 			</Script>
 			<Script isActive="yes" isFolder="no">
-				<name>autoassist</name>
+				<name>autobash</name>
 				<packageName></packageName>
-				<script>if not MUME.autoassist then
-  MUME.autoassist = "off"
+				<script>if not MUME.autobash then
+  MUME.autobash = "off"
 end</script>
 				<eventHandlerList />
 			</Script>

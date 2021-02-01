@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage />
+	<TimerPackage />
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>quickalias</name>
+			<script>local key = matches[2]
+local cmd = matches[4]
+
+if not MUME.quickAlias then MUME.quickAlias = {} end
+
+if cmd then
+  MUME.quickAlias[key] = cmd
+  echo(string.format("    [ %s aliased to '%s' ]\n", key, cmd))
+else
+  local existing = MUME.quickAlias[key]
+  if not existing then return end
+  local cmds = string.split(MUME.quickAlias[key], '|')
+  for _, cmd in pairs(cmds) do
+    expandAlias(cmd)
+  end
+end
+</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^([A-Z0-9])( (.*))?$</regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>show quickaliases</name>
+				<script>if not MUME.quickAlias then MUME.quickAlias = {} end
+local keys = string.split(
+"1234567890QWERTYUIOPASDFGHJKLZXCVBNM",
+""
+)
+
+for _, n in pairs(keys) do
+  local a = MUME.quickAlias[n]
+  if a then
+    print(string.format("    %s: %s", n, a))
+  end
+end</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^qa$</regex>
+			</Alias>
+		</Alias>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage />
+	<KeyPackage />
+	<HelpPackage>
+		<helpURL></helpURL>
+	</HelpPackage>
+</MudletPackage>

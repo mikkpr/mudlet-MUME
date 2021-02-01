@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>mode</name>
+			<script>if not MODE then MODE = "insert" end
+
+local str = ""
+if MODE == "insert" then
+  str = "[&lt;DarkSeaGreen&gt;INS&lt;reset&gt;] "
+else
+  str = "[&lt;LightSkyBlue&gt;NRM&lt;reset&gt;] "
+end
+
+cinsertText(str)</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>return isPrompt()</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>4</integer>
+			</regexCodePropertyList>
+		</Trigger>
+	</TriggerPackage>
+	<TimerPackage />
+	<AliasPackage />
+	<ActionPackage />
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>mode</name>
+			<packageName></packageName>
+			<script>if not MODE then MODE = "insert" end
+
+function toggleMode()
+  if MODE == "insert" then
+    MODE = "normal"
+    enableKey('normalmode')
+    disableKey('insertMode')
+    tempKey(mudlet.key.Escape, [[ MODE = "insert" ]]) 
+  else
+    MODE = "insert"
+    enableKey('insertmode')
+    disableKey('normalmode')
+  end
+end
+
+function updatePrompt()
+  if MODE == "normal" then
+  selectString("INS")
+  replace("NRM")
+  else
+  selectString("NRM")
+  replace("INS")
+  end
+end</script>
+			<eventHandlerList />
+		</Script>
+	</ScriptPackage>
+	<KeyPackage>
+		<Key isActive="yes" isFolder="no">
+			<name>toggle mode</name>
+			<packageName></packageName>
+			<script>toggleMode()
+send("")</script>
+			<command></command>
+			<keyCode>32</keyCode>
+			<keyModifier>67108864</keyModifier>
+		</Key>
+		<KeyGroup isActive="no" isFolder="yes">
+			<name>normalmode</name>
+			<packageName></packageName>
+			<script></script>
+			<command></command>
+			<keyCode>-1</keyCode>
+			<keyModifier>-1</keyModifier>
+			<KeyGroup isActive="yes" isFolder="yes">
+				<name>quickalias (letters)</name>
+				<packageName></packageName>
+				<script></script>
+				<command></command>
+				<keyCode>-1</keyCode>
+				<keyModifier>-1</keyModifier>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias A</name>
+					<packageName></packageName>
+					<script></script>
+					<command>A</command>
+					<keyCode>65</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+			</KeyGroup>
+			<KeyGroup isActive="yes" isFolder="yes">
+				<name>quickalias (numbers)</name>
+				<packageName></packageName>
+				<script></script>
+				<command></command>
+				<keyCode>-1</keyCode>
+				<keyModifier>-1</keyModifier>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias 0</name>
+					<packageName></packageName>
+					<script></script>
+					<command>0</command>
+					<keyCode>48</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias 1</name>
+					<packageName></packageName>
+					<script></script>
+					<command>1</command>
+					<keyCode>49</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias 2</name>
+					<packageName></packageName>
+					<script></script>
+					<command>2</command>
+					<keyCode>50</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias 3</name>
+					<packageName></packageName>
+					<script></script>
+					<command>3</command>
+					<keyCode>51</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias 4</name>
+					<packageName></packageName>
+					<script></script>
+					<command>4</command>
+					<keyCode>52</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias 5</name>
+					<packageName></packageName>
+					<script></script>
+					<command>5</command>
+					<keyCode>53</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias 6</name>
+					<packageName></packageName>
+					<script></script>
+					<command>6</command>
+					<keyCode>54</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias 7</name>
+					<packageName></packageName>
+					<script></script>
+					<command>7</command>
+					<keyCode>55</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias 8</name>
+					<packageName></packageName>
+					<script></script>
+					<command>8</command>
+					<keyCode>56</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias 9</name>
+					<packageName></packageName>
+					<script></script>
+					<command>9</command>
+					<keyCode>57</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+			</KeyGroup>
+		</KeyGroup>
+	</KeyPackage>
+	<HelpPackage>
+		<helpURL></helpURL>
+	</HelpPackage>
+</MudletPackage>

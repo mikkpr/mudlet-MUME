@@ -316,6 +316,16 @@ local subs = {
   ["A deft, young orc monitors the area, ready to attack any enemy"] = "A  green-cloaked Durbûk-hai archer",
   ["A dreadful hill troll with a skin full of warts is standing here"] = "A warty troll",
   ["A black raven flies in the sky searching for flesh to prey upon"] = "A black raven",
+  ["A brown cow is here, contemplating a higher reality whilst chewing slowly"] = "A brown cow",
+  ["A barn-owl is here, looking for easy prey"] = "A barn-owl",
+  ["A duck is here, quacking happily"] = "A duck",
+  ["A shadowy haunt floats here, oblivious to your presence"] = "A haunt",
+  ["A wicked black witch glares at you with mad eyes"] = "&lt;firebrick&gt;The witch",
+  ["A swarthy, little bandit advances forward"] = "A swarthy bandit",
+  ["A worm is here slithering around"] = "A worm",
+  ["A large, dangerous-looking green snake is coiled up here"] = "A green snake",
+  ["Big John is swiftly moving around, hiding in the shadows"] = "&lt;firebrick&gt;Big John, the chief brigand",
+  ["A grey wolf is here, thin from starvation"] = "A starved grey wolf",
 }
 
 local str = matches[2]:gsub(" %(.*%)", ""):gsub("%.$", "")
@@ -343,14 +353,14 @@ temp = temp or string.match(matches[2], "An? (.*) is lying here,")
 temp = temp or string.match(matches[2], "An? (.*) is standing here")
 if temp then
   cinsertText(string.format("&lt;white&gt;%s&lt;ansiLightBlack&gt;", prefix))
+  
+  selectString("(glowing)", 1)
+  fg("white")
+  
+  selectString("(hidden)", 1)
+  fg("SlateGrey")
   return
-end
-
-selectString("(glowing)", 1)
-fg("white")
-
-selectString("(hidden)", 1)
-fg("SlateGrey")</script>
+end</script>
 			<triggerType>0</triggerType>
 			<conditonLineDelta>0</conditonLineDelta>
 			<mStayOpen>0</mStayOpen>
