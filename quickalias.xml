@@ -44,6 +44,14 @@ end</script>
 				<packageName></packageName>
 				<regex>^qa$</regex>
 			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>clear all quickaliases</name>
+				<script>MUME.quickAlias = {}
+print("Removed all quick aliases.")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^qa clear$</regex>
+			</Alias>
 		</Alias>
 	</AliasPackage>
 	<ActionPackage />

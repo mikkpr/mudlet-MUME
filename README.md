@@ -9,18 +9,23 @@
 
 ## Overview
 
-### Autoride and Autoassist
+### Autoride, Autoassist and Autobash
 
 - `leader <name>` Set the leader's name
 - `aa` toggle Autoassist on/off
 - `ar` toggle Autoride on/off
+- `ab` toggle Autobas on/off
 
-When toggled on, Autoride will monitor when the leader dismounts/starts riding and mimicks them.
-Similarly, Autoassist will `assist` whenever your leader deals damage.
+When toggled on, __Autoride__ will monitor when the leader dismounts/starts riding and mimicks them.
 
-NB! Triggers like these are not allowed in PK!
+Similarly, __Autoassist__ will `assist` whenever your leader deals damage.
 
-Note that both modules add a `leader` alias, so you can remove one
+__Autobash__ monitors failed bashes and opponents recovering and bashes again. Doesn't handle multiple
+opponents or anyone else bashing, but somewhat helpful while exping.
+
+_NB! Triggers like these are not allowed in PK!_
+
+Note that all of these modules add a `leader` alias, so you can remove the one you don't want
 
 ### Equipment
 
@@ -61,4 +66,55 @@ A collection of utility functions and extensions that are used in some other mod
 A pretty standard XP calculator implementation.
 - `xpreset` Resets the collected info so far.
 
+### MMapper door command aliases
+- `op` = `_open`
+- `cl` = `_close`
+- `bl` = `_block`
+- `ba` = `_bash`
+- `br` = `_break`
+- `ul` = `_unlock`
+- `lo` = `_lock`
+- `pi` = `_pick`
+- `kn` = `_knock`
+- `ro` = `_rock`
 
+### Quick alias
+
+The __quickalias__ system allows you to make single-character aliases on the fly.
+Supported keys: `1..0` (above the letters) and all capital letters, e.g. `A`, but not `a`. You can use the pipe character (`|`) to separate commands. Also, the commands can themselves be other aliases, so you can do pretty much whatever you want.
+
+- `A kill orc` sets the alias `A` as `kill orc`
+- `qa` lists all defined quick aliases
+- `qa clear` removes all defined quick aliases
+
+### Modal input
+
+Inspired from Vim's insert/normal mode, the __Modal__ system toggles between `INSERT` and `NORMAL` modes.
+
+Toggling between modes: `CTRL + SPACE`.
+
+The prompt is also prefixed with the current mode: `[INS] *# cW>` or `[NRM] *# cW>`
+
+The __INSERT__ mode acts as a direct text input mode, just like you're used to.
+
+The __NORMAL__ mode, however, takes over many letter keys and also supports quickaliases directly:
+Obviously, these are my personal preferences and you can customize it however you want. Also, it uses the door aliases defined in the __mmapper__ module.
+
+- `h, j, k, l, u, n` are the direction keys: `west, south, north, east, up, down`, respectively.
+- `r` -> ride
+- `d` -> lead
+- Door management uses letter sequences instead of using modifier keys.
+  - First you press the command key, followed by a direction key (same ones as defined above).
+  - `q` -> `op`
+  - `w` -> `cl`
+  - `a` -> `ul`
+  - `s` -> `lo`
+  - `z` -> `pi`
+  - `e` -> `scout`
+  - `c` -> `ba`
+
+  Examples:
+  - `q h` -> `op west`
+  - `e u` -> `scout up`
+  - `z j` -> `pick south`
+  - etc.
