@@ -46,12 +46,12 @@ function toggleMode()
     MODE = "normal"
     enableKey('normalmode')
     disableKey('insertMode')
-    tempKey(mudlet.key.Escape, [[ MODE = "insert" ]]) 
   else
     MODE = "insert"
     enableKey('insertmode')
     disableKey('normalmode')
   end
+  resetDoorKeys()
 end
 
 function updatePrompt()
@@ -62,6 +62,66 @@ function updatePrompt()
   selectString("NRM")
   replace("INS")
   end
+end
+
+function openPressed()
+  disableKey('movement')
+  disableKey('open')
+  enableKey('open dirs')
+end
+
+function closePressed()
+  disableKey('movement')
+  disableKey('close')
+  enableKey('close dirs')
+end
+
+function lockPressed()
+  disableKey('movement')
+  disableKey('lock')
+  enableKey('lock dirs')
+end
+
+function unlockPressed()
+  disableKey('movement')
+  disableKey('unlock')
+  enableKey('unlock dirs')
+end
+
+function pickPressed()
+  disableKey('movement')
+  disableKey('pick')
+  enableKey('pick dirs')
+end
+
+function scoutPressed()
+  disableKey('movement')
+  disableKey('scout')
+  enableKey('scout dirs')
+end
+
+function doorbashPressed()
+  disableKey('movement')
+  disableKey('doorbash')
+  enableKey('doorbash dirs')
+end
+
+function resetDoorKeys()
+  enableKey('movement')
+  enableKey('open')
+  enableKey('close')
+  enableKey('lock')
+  enableKey('unlock')
+  enableKey('pick')
+  enableKey('scout')
+  enableKey('doorbash')
+  disableKey('open dirs')
+  disableKey('close dirs')
+  disableKey('lock dirs')
+  disableKey('unlock dirs')
+  disableKey('pick dirs')
+  disableKey('scout dirs')
+  disableKey('doorbash dirs')
 end</script>
 			<eventHandlerList />
 		</Script>
@@ -71,12 +131,12 @@ end</script>
 			<name>toggle mode</name>
 			<packageName></packageName>
 			<script>toggleMode()
-send("")</script>
+send("\n")</script>
 			<command></command>
 			<keyCode>32</keyCode>
 			<keyModifier>67108864</keyModifier>
 		</Key>
-		<KeyGroup isActive="yes" isFolder="yes">
+		<KeyGroup isActive="no" isFolder="yes">
 			<name>normalmode</name>
 			<packageName></packageName>
 			<script></script>
@@ -387,6 +447,654 @@ send("")</script>
 					<keyModifier>0</keyModifier>
 				</Key>
 			</KeyGroup>
+			<KeyGroup isActive="yes" isFolder="yes">
+				<name>movement</name>
+				<packageName></packageName>
+				<script></script>
+				<command></command>
+				<keyCode>-1</keyCode>
+				<keyModifier>-1</keyModifier>
+				<Key isActive="yes" isFolder="no">
+					<name>west</name>
+					<packageName></packageName>
+					<script></script>
+					<command>west</command>
+					<keyCode>72</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>east</name>
+					<packageName></packageName>
+					<script></script>
+					<command>east</command>
+					<keyCode>76</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>north</name>
+					<packageName></packageName>
+					<script></script>
+					<command>north</command>
+					<keyCode>75</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>south</name>
+					<packageName></packageName>
+					<script></script>
+					<command>south</command>
+					<keyCode>74</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>up</name>
+					<packageName></packageName>
+					<script></script>
+					<command>up</command>
+					<keyCode>85</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>down</name>
+					<packageName></packageName>
+					<script></script>
+					<command>down</command>
+					<keyCode>78</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+			</KeyGroup>
+			<KeyGroup isActive="yes" isFolder="yes">
+				<name>doors</name>
+				<packageName></packageName>
+				<script></script>
+				<command></command>
+				<keyCode>-1</keyCode>
+				<keyModifier>-1</keyModifier>
+				<Key isActive="yes" isFolder="no">
+					<name>open</name>
+					<packageName></packageName>
+					<script>openPressed()</script>
+					<command></command>
+					<keyCode>81</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<KeyGroup isActive="no" isFolder="yes">
+					<name>open dirs</name>
+					<packageName></packageName>
+					<script></script>
+					<command></command>
+					<keyCode>-1</keyCode>
+					<keyModifier>-1</keyModifier>
+					<Key isActive="yes" isFolder="no">
+						<name>open south</name>
+						<packageName></packageName>
+						<script>expandAlias("op south", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>74</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>open north</name>
+						<packageName></packageName>
+						<script>expandAlias("op north", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>75</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>open east</name>
+						<packageName></packageName>
+						<script>expandAlias("op east", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>76</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>open west</name>
+						<packageName></packageName>
+						<script>expandAlias("op west", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>72</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>open up</name>
+						<packageName></packageName>
+						<script>expandAlias("op up", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>74</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>open down</name>
+						<packageName></packageName>
+						<script>expandAlias("op down", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>78</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>op</name>
+						<packageName></packageName>
+						<script>expandAlias("op", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>81</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+				</KeyGroup>
+				<Key isActive="yes" isFolder="no">
+					<name>close</name>
+					<packageName></packageName>
+					<script>closePressed()</script>
+					<command></command>
+					<keyCode>87</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<KeyGroup isActive="no" isFolder="yes">
+					<name>close dirs</name>
+					<packageName></packageName>
+					<script></script>
+					<command></command>
+					<keyCode>-1</keyCode>
+					<keyModifier>-1</keyModifier>
+					<Key isActive="yes" isFolder="no">
+						<name>close south</name>
+						<packageName></packageName>
+						<script>expandAlias("cl south", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>74</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>close north</name>
+						<packageName></packageName>
+						<script>expandAlias("cl north", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>75</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>close east</name>
+						<packageName></packageName>
+						<script>expandAlias("cl east", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>76</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>close west</name>
+						<packageName></packageName>
+						<script>expandAlias("cl west", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>72</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>close up</name>
+						<packageName></packageName>
+						<script>expandAlias("cl up", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>74</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>close down</name>
+						<packageName></packageName>
+						<script>expandAlias("cl down", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>78</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>cl</name>
+						<packageName></packageName>
+						<script>expandAlias("ck", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>87</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+				</KeyGroup>
+				<Key isActive="yes" isFolder="no">
+					<name>unlock</name>
+					<packageName></packageName>
+					<script>unlockPressed()</script>
+					<command></command>
+					<keyCode>65</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<KeyGroup isActive="no" isFolder="yes">
+					<name>unlock dirs</name>
+					<packageName></packageName>
+					<script></script>
+					<command></command>
+					<keyCode>-1</keyCode>
+					<keyModifier>-1</keyModifier>
+					<Key isActive="yes" isFolder="no">
+						<name>unlock south</name>
+						<packageName></packageName>
+						<script>expandAlias("ul south", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>74</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>unlock north</name>
+						<packageName></packageName>
+						<script>expandAlias("ul north", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>75</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>unlock east</name>
+						<packageName></packageName>
+						<script>expandAlias("ul east", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>76</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>unlock west</name>
+						<packageName></packageName>
+						<script>expandAlias("ul west", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>72</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>unlock up</name>
+						<packageName></packageName>
+						<script>expandAlias("ul up", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>74</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>unlock down</name>
+						<packageName></packageName>
+						<script>expandAlias("ul down", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>78</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>ul</name>
+						<packageName></packageName>
+						<script>expandAlias("ul", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>65</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+				</KeyGroup>
+				<Key isActive="yes" isFolder="no">
+					<name>lock</name>
+					<packageName></packageName>
+					<script>lockPressed()</script>
+					<command></command>
+					<keyCode>83</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<KeyGroup isActive="no" isFolder="yes">
+					<name>lock dirs</name>
+					<packageName></packageName>
+					<script></script>
+					<command></command>
+					<keyCode>-1</keyCode>
+					<keyModifier>-1</keyModifier>
+					<Key isActive="yes" isFolder="no">
+						<name>lock south</name>
+						<packageName></packageName>
+						<script>expandAlias("lo south", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>74</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>lock north</name>
+						<packageName></packageName>
+						<script>expandAlias("lo north", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>75</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>lock east</name>
+						<packageName></packageName>
+						<script>expandAlias("lo east", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>76</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>lock west</name>
+						<packageName></packageName>
+						<script>expandAlias("lo west", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>72</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>lock up</name>
+						<packageName></packageName>
+						<script>expandAlias("lo up", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>74</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>lock down</name>
+						<packageName></packageName>
+						<script>expandAlias("lo down", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>78</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>lo</name>
+						<packageName></packageName>
+						<script>expandAlias("lo", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>83</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+				</KeyGroup>
+				<Key isActive="yes" isFolder="no">
+					<name>pick</name>
+					<packageName></packageName>
+					<script>pickPressed()</script>
+					<command></command>
+					<keyCode>90</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<KeyGroup isActive="no" isFolder="yes">
+					<name>pick dirs</name>
+					<packageName></packageName>
+					<script></script>
+					<command></command>
+					<keyCode>-1</keyCode>
+					<keyModifier>-1</keyModifier>
+					<Key isActive="yes" isFolder="no">
+						<name>pick south</name>
+						<packageName></packageName>
+						<script>expandAlias("pi south", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>74</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>pick north</name>
+						<packageName></packageName>
+						<script>expandAlias("pi north", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>75</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>pick east</name>
+						<packageName></packageName>
+						<script>expandAlias("pi east", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>76</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>pick west</name>
+						<packageName></packageName>
+						<script>expandAlias("pi west", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>72</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>pick up</name>
+						<packageName></packageName>
+						<script>expandAlias("pi up", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>74</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>pick down</name>
+						<packageName></packageName>
+						<script>expandAlias("pi down", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>78</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>pi</name>
+						<packageName></packageName>
+						<script>expandAlias("pi", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>90</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+				</KeyGroup>
+				<Key isActive="yes" isFolder="no">
+					<name>scout</name>
+					<packageName></packageName>
+					<script>scoutPressed()</script>
+					<command></command>
+					<keyCode>69</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<KeyGroup isActive="no" isFolder="yes">
+					<name>scout dirs</name>
+					<packageName></packageName>
+					<script></script>
+					<command></command>
+					<keyCode>-1</keyCode>
+					<keyModifier>-1</keyModifier>
+					<Key isActive="yes" isFolder="no">
+						<name>scout south</name>
+						<packageName></packageName>
+						<script>expandAlias("scout south", true)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>74</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>scout north</name>
+						<packageName></packageName>
+						<script>expandAlias("scout north", true)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>75</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>scout east</name>
+						<packageName></packageName>
+						<script>expandAlias("scout east", true)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>76</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>scout west</name>
+						<packageName></packageName>
+						<script>expandAlias("scout west", true)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>72</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>scout up</name>
+						<packageName></packageName>
+						<script>expandAlias("scout up", true)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>74</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>scout down</name>
+						<packageName></packageName>
+						<script>expandAlias("scout down", true)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>78</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>pi</name>
+						<packageName></packageName>
+						<script>resetDoorKeys()</script>
+						<command></command>
+						<keyCode>69</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+				</KeyGroup>
+				<Key isActive="yes" isFolder="no">
+					<name>doorbash</name>
+					<packageName></packageName>
+					<script>doorbashPressed()</script>
+					<command></command>
+					<keyCode>67</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<KeyGroup isActive="no" isFolder="yes">
+					<name>doorbash dirs</name>
+					<packageName></packageName>
+					<script></script>
+					<command></command>
+					<keyCode>-1</keyCode>
+					<keyModifier>-1</keyModifier>
+					<Key isActive="yes" isFolder="no">
+						<name>bash south</name>
+						<packageName></packageName>
+						<script>expandAlias("ba south", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>74</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>bash north</name>
+						<packageName></packageName>
+						<script>expandAlias("ba north", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>75</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>bash east</name>
+						<packageName></packageName>
+						<script>expandAlias("ba east", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>76</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>bash west</name>
+						<packageName></packageName>
+						<script>expandAlias("ba west", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>72</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>bash up</name>
+						<packageName></packageName>
+						<script>expandAlias("ba up", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>74</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>bash down</name>
+						<packageName></packageName>
+						<script>expandAlias("ba down", false)
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>78</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+					<Key isActive="yes" isFolder="no">
+						<name>ba</name>
+						<packageName></packageName>
+						<script>send("bash")
+resetDoorKeys()</script>
+						<command></command>
+						<keyCode>67</keyCode>
+						<keyModifier>0</keyModifier>
+					</Key>
+				</KeyGroup>
+			</KeyGroup>
+			<KeyGroup isActive="yes" isFolder="yes">
+				<name>riding</name>
+				<packageName></packageName>
+				<script></script>
+				<command></command>
+				<keyCode>-1</keyCode>
+				<keyModifier>-1</keyModifier>
+				<Key isActive="yes" isFolder="no">
+					<name>ride</name>
+					<packageName></packageName>
+					<script></script>
+					<command>ride</command>
+					<keyCode>82</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>lead</name>
+					<packageName></packageName>
+					<script></script>
+					<command>lead</command>
+					<keyCode>68</keyCode>
+					<keyModifier>0</keyModifier>
+				</Key>
+			</KeyGroup>
+			<Key isActive="yes" isFolder="no">
+				<name>target</name>
+				<packageName></packageName>
+				<script>toggleMode()</script>
+				<command></command>
+				<keyCode>88</keyCode>
+				<keyModifier>0</keyModifier>
+			</Key>
 		</KeyGroup>
 	</KeyPackage>
 	<HelpPackage>
