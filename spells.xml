@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage />
+	<TimerPackage />
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>spell speed</name>
+			<script>local speed = matches[2]
+
+local speeds = {
+  ["n"] = "normally",
+  ["q"] = "quickly",
+  ["f"] = "fast",
+  ["c"] = "carefully",
+  ["t"] = "thoroughly",
+}
+
+echo(string.format("    [ speed: %s ]\n", speeds[speed]))
+MUME.speed = speeds[speed]</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^ss(q|f|n|c|t)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>set spell</name>
+			<script>local spell = matches[2]
+if spell then
+  MUME.spell = spell
+end
+
+echo(string.format("    [ spell: '%s' ]\n", MUME.spell or ""))</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^spell (.+)|spell$</regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>set spell</name>
+				<script>switch({
+  ["spha"] = function() expandAlias("spell harm", false) end,
+  ["splb"] = function() expandAlias("spell lightning bolt", false) end,
+  ["spbh"] = function() expandAlias("spell burning hands", false) end,
+  ["spfb"] = function() expandAlias("spell fireball", false) end,
+  ["spbl"] = function() expandAlias("spell blindness", false) end,
+  ["spsl"] = function() expandAlias("spell sleep", false) end,
+  ["spcs"] = function() expandAlias("spell colour spray", false) end,
+  ["spde"] = function() expandAlias("spell dispel evil", false) end,
+  ["speq"] = function() expandAlias("spell earthquake", false) end,
+}):case(matches[1])</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^spha|splb|spbh|spfb|spbl|spsl|spcs|spde|speq$</regex>
+			</Alias>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>cast</name>
+			<script>local target
+local command
+if matches[1] == "sp" then
+  target = ""
+else
+  target = string.format("%s", MUME.target)
+end
+
+command = string.format("cast %s '%s' %s", MUME.speed, MUME.spell, target)
+
+send(command)</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^sp( (.*))?$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>cast @ target</name>
+			<script>local target
+if matches[2] == "m" then
+  target = MUME.mount or ""
+else
+  target = MUME.target or ""
+end
+local num = matches[3] or "1"
+local command
+target = string.format("%s.%s", num, target)
+
+command = string.format("cast %s '%s' %s", MUME.speed, MUME.spell, target)
+
+send(command)
+</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^s(t|m)(\d)?$</regex>
+		</Alias>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>init</name>
+			<packageName></packageName>
+			<script>if not MUME then MUME = {} end</script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>spells</name>
+				<packageName></packageName>
+				<script>if not MUME.spell then MUME.spell = "lightning bolt" end
+if not MUME.speed then MUME.speed = "normally" end</script>
+				<eventHandlerList />
+			</Script>
+		</Script>
+	</ScriptPackage>
+	<KeyPackage />
+	<HelpPackage>
+		<helpURL></helpURL>
+	</HelpPackage>
+</MudletPackage>

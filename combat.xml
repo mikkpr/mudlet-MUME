@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage />
+	<TimerPackage />
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>ofht</name>
+			<script>local num = matches[2] or "1"
+
+send("order followers hit " .. num .. "." .. MUME.target)</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^ofht([0-9])*$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>shoot + escape</name>
+			<script>local dir = matches[2]
+local num = matches[3] or "1"
+local reverseDirs = {
+  ["e"] = "w",
+  ["w"] = "e",
+  ["s"] = "n",
+  ["n"] = "s",
+  ["u"] = "d",
+  ["d"] = "u"
+}
+
+send(dir)
+send("shoot " .. num .. "." .. MUME.target)
+send("escape " .. reverseDirs[dir])</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^sh(e|s|n|w|u|d)(\d)?$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>bs + escape</name>
+			<script>local dir = matches[2]
+local num = matches[3] or "1"
+local reverseDirs = {
+  ["e"] = "w",
+  ["w"] = "e",
+  ["s"] = "n",
+  ["n"] = "s",
+  ["u"] = "d",
+  ["d"] = "u"
+}
+
+send(dir)
+send("backstab " .. num .. "." .. MUME.target)
+send("escape " .. reverseDirs[dir])</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^bs(e|s|n|w|u|d)(\d)?$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>combat</name>
+			<script>local commands = {
+  ["ht"] = "hit",
+  ["bst"] = "backstab",
+  ["sht"] = "shoot",
+  ["bt"] = "bash",
+  ["bdt"] = "bash disengage",
+  ["kt"] = "kill",
+  ["tt"] = "track",
+  ["wt"] = "where"
+}
+local target = MUME.target or ""
+if string.sub(matches[3], #matches[3]) == "m" then
+  target = MUME.mount or ""
+end
+local cmd = replace_char(#matches[3], matches[3], "t")
+local command = commands[cmd] or "kill"
+local num = matches[4] or "1"
+local dir = matches[5] or ""
+
+local formattedNum = (num .. ".")
+
+if command == "track" or command == "where" then
+  formattedNum = ""
+end
+
+send(string.format("%s %s%s", command, formattedNum, target))</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^((tt|tm|wt|wm|ht|hm|bst|bsm|shm|sht|bt|bm|bdt|bdm|kt|km)([0-9])*)( \w+)?$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>target</name>
+			<script>if matches[4] then
+  MUME.target = matches[4]
+end
+
+echo(string.format("    [ target: %s ]\n", MUME.target or "")) </script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^(x|target)( (.*))?$</regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>targets</name>
+				<script>switch({
+  ["telf"] = function() expandAlias("target *elf*", false) end,
+  ["torc"] = function() expandAlias("target *orc*", false) end,
+  ["tdwa"] = function() expandAlias("target *dwarf*", false) end,
+  ["ttro"] = function() expandAlias("target *troll*", false) end,
+  ["thob"] = function() expandAlias("target *hobbit*", false) end,
+  ["thelf"] = function() expandAlias("target *half-elf*", false) end,
+  ["tman"] = function() expandAlias("target *man*", false) end,
+}):case(matches[1])</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^(telf|torc|tdwa|ttro|thob|thelf|tman)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>mount</name>
+				<script>if matches[4] then
+  MUME.mount = matches[4]
+end
+
+echo(string.format("    [ mount: %s ]\n", MUME.mount or "")) </script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^(xm|mount)( (.*))?$</regex>
+			</Alias>
+		</Alias>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>init</name>
+			<packageName></packageName>
+			<script>if not MUME then MUME = {} end</script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>target</name>
+				<packageName></packageName>
+				<script>if not MUME.target then MUME.target = "orc" end
+if not MUME.mount then MUME.mount = "warg" end</script>
+				<eventHandlerList />
+			</Script>
+		</Script>
+	</ScriptPackage>
+	<KeyPackage />
+	<HelpPackage>
+		<helpURL></helpURL>
+	</HelpPackage>
+</MudletPackage>
