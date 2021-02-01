@@ -76,7 +76,7 @@ send("")</script>
 			<keyCode>32</keyCode>
 			<keyModifier>67108864</keyModifier>
 		</Key>
-		<KeyGroup isActive="no" isFolder="yes">
+		<KeyGroup isActive="yes" isFolder="yes">
 			<name>normalmode</name>
 			<packageName></packageName>
 			<script></script>
@@ -96,6 +96,206 @@ send("")</script>
 					<script></script>
 					<command>A</command>
 					<keyCode>65</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias B</name>
+					<packageName></packageName>
+					<script></script>
+					<command>B</command>
+					<keyCode>66</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias C</name>
+					<packageName></packageName>
+					<script></script>
+					<command>C</command>
+					<keyCode>67</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias D</name>
+					<packageName></packageName>
+					<script></script>
+					<command>D</command>
+					<keyCode>68</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias E</name>
+					<packageName></packageName>
+					<script></script>
+					<command>E</command>
+					<keyCode>69</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias F</name>
+					<packageName></packageName>
+					<script></script>
+					<command>F</command>
+					<keyCode>70</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias G</name>
+					<packageName></packageName>
+					<script></script>
+					<command>G</command>
+					<keyCode>71</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias H</name>
+					<packageName></packageName>
+					<script></script>
+					<command>H</command>
+					<keyCode>72</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias I</name>
+					<packageName></packageName>
+					<script></script>
+					<command>I</command>
+					<keyCode>73</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias J</name>
+					<packageName></packageName>
+					<script></script>
+					<command>J</command>
+					<keyCode>74</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias K</name>
+					<packageName></packageName>
+					<script></script>
+					<command>K</command>
+					<keyCode>75</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias L</name>
+					<packageName></packageName>
+					<script></script>
+					<command>L</command>
+					<keyCode>76</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias M</name>
+					<packageName></packageName>
+					<script></script>
+					<command>M</command>
+					<keyCode>77</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias N</name>
+					<packageName></packageName>
+					<script></script>
+					<command>N</command>
+					<keyCode>78</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias O</name>
+					<packageName></packageName>
+					<script></script>
+					<command>O</command>
+					<keyCode>79</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias P</name>
+					<packageName></packageName>
+					<script></script>
+					<command>P</command>
+					<keyCode>80</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias Q</name>
+					<packageName></packageName>
+					<script></script>
+					<command>Q</command>
+					<keyCode>81</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias R</name>
+					<packageName></packageName>
+					<script></script>
+					<command>R</command>
+					<keyCode>82</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias S</name>
+					<packageName></packageName>
+					<script></script>
+					<command>S</command>
+					<keyCode>83</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias T</name>
+					<packageName></packageName>
+					<script></script>
+					<command>T</command>
+					<keyCode>84</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias U</name>
+					<packageName></packageName>
+					<script></script>
+					<command>U</command>
+					<keyCode>85</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias V</name>
+					<packageName></packageName>
+					<script></script>
+					<command>V</command>
+					<keyCode>86</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias W</name>
+					<packageName></packageName>
+					<script></script>
+					<command>W</command>
+					<keyCode>87</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias X</name>
+					<packageName></packageName>
+					<script></script>
+					<command>X</command>
+					<keyCode>88</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias Y</name>
+					<packageName></packageName>
+					<script></script>
+					<command>Y</command>
+					<keyCode>89</keyCode>
+					<keyModifier>33554432</keyModifier>
+				</Key>
+				<Key isActive="yes" isFolder="no">
+					<name>quickalias Z</name>
+					<packageName></packageName>
+					<script></script>
+					<command>Z</command>
+					<keyCode>90</keyCode>
 					<keyModifier>33554432</keyModifier>
 				</Key>
 			</KeyGroup>
