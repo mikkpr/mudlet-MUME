@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<AliasPackage>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>id</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>fetch</name>
+				<script>local q = matches[2] or ""
+
+local url = "https://mume.ikald.us/api/items"
+
+local handler
+function onHttpGetDone(_, url, body)
+  cecho(string.format("\nquery: %s\n\nresults:\n%s\n\n", q, body))
+  
+  killAnonymousEventHandler(handler)
+end
+
+handler = registerAnonymousEventHandler("sysGetHttpDone", onHttpGetDone)
+
+getHTTP(url .. "?q=" .. q, {
+  ["Content-Type"] = "text/plain",
+})
+</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^id (.*)?$</regex>
+			</Alias>
+		</AliasGroup>
+	</AliasPackage>
+</MudletPackage>
+

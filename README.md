@@ -168,3 +168,6 @@ Obviously, these are my personal preferences and you can customize it however yo
   - `e u` -> `scout up`
   - `z j` -> `pick south`
   - etc.
+
+  ### Item ID
+`id <query>`  Fetches results from `http://mume.ikald.us/api/items` and displays them directly in the client.
