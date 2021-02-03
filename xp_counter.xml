@@ -79,14 +79,14 @@ hecho(string.format([[
 
   #666666Gained XP: #ffffff%s   #666666Gained TP: #ffffff%s
      #666666XP TNL: #ffffff%s      #666666TP TNL: #ffffff%s
-    #666666XP rate: #ffffff%s#666666/h SessionTP: #ffffff%s
+ #666666Session XP: #ffffff%s  #666666Session TP: #ffffff%s
 
 ]],
 string.rpad(""..gainedXP, 8, ' '),
 string.rpad(""..gainedTP, 8, ' '),
 string.rpad(""..neededXP, 8, ' '),
 string.rpad(""..neededTP, 8, ' '),
-string.rpad(""..math.ceil(XPrate), 8, ' '),
+string.rpad(""..sessionXP, 8, ' '),
 string.rpad(""..sessionTP, 8, ' ')
 ))
 end</script>

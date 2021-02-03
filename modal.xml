@@ -567,7 +567,7 @@ resetDoorKeys()</script>
 						<script>expandAlias("op up", false)
 resetDoorKeys()</script>
 						<command></command>
-						<keyCode>74</keyCode>
+						<keyCode>85</keyCode>
 						<keyModifier>0</keyModifier>
 					</Key>
 					<Key isActive="yes" isFolder="no">
@@ -646,7 +646,7 @@ resetDoorKeys()</script>
 						<script>expandAlias("cl up", false)
 resetDoorKeys()</script>
 						<command></command>
-						<keyCode>74</keyCode>
+						<keyCode>85</keyCode>
 						<keyModifier>0</keyModifier>
 					</Key>
 					<Key isActive="yes" isFolder="no">
@@ -725,7 +725,7 @@ resetDoorKeys()</script>
 						<script>expandAlias("ul up", false)
 resetDoorKeys()</script>
 						<command></command>
-						<keyCode>74</keyCode>
+						<keyCode>85</keyCode>
 						<keyModifier>0</keyModifier>
 					</Key>
 					<Key isActive="yes" isFolder="no">
@@ -804,7 +804,7 @@ resetDoorKeys()</script>
 						<script>expandAlias("lo up", false)
 resetDoorKeys()</script>
 						<command></command>
-						<keyCode>74</keyCode>
+						<keyCode>85</keyCode>
 						<keyModifier>0</keyModifier>
 					</Key>
 					<Key isActive="yes" isFolder="no">
@@ -883,7 +883,7 @@ resetDoorKeys()</script>
 						<script>expandAlias("pi up", false)
 resetDoorKeys()</script>
 						<command></command>
-						<keyCode>74</keyCode>
+						<keyCode>85</keyCode>
 						<keyModifier>0</keyModifier>
 					</Key>
 					<Key isActive="yes" isFolder="no">
@@ -962,7 +962,7 @@ resetDoorKeys()</script>
 						<script>expandAlias("scout up", true)
 resetDoorKeys()</script>
 						<command></command>
-						<keyCode>74</keyCode>
+						<keyCode>85</keyCode>
 						<keyModifier>0</keyModifier>
 					</Key>
 					<Key isActive="yes" isFolder="no">
@@ -1040,7 +1040,7 @@ resetDoorKeys()</script>
 						<script>expandAlias("ba up", false)
 resetDoorKeys()</script>
 						<command></command>
-						<keyCode>74</keyCode>
+						<keyCode>85</keyCode>
 						<keyModifier>0</keyModifier>
 					</Key>
 					<Key isActive="yes" isFolder="no">
