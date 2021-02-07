@@ -3,7 +3,182 @@
 <MudletPackage version="1.001">
 	<TriggerPackage />
 	<TimerPackage />
-	<AliasPackage />
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>location keys</name>
+			<script>local args = matches[3] or ""
+
+if (args == nil) or (args == "") then
+  print([[ 
+  Usage:
+  - key list
+  - key &lt;name&gt; &lt;key&gt;
+  - key delete/remove &lt;name&gt;
+  - key delete all
+  - out              - quickport to key 'out'
+  - out &lt;name/key&gt;   - set key 'out'
+  - _tp &lt;name&gt;
+  - _port &lt;name&gt; &lt;dir&gt;
+  - _watch &lt;name&gt;
+  - _scry &lt;name&gt;
+  ]])
+  return
+end
+
+if not Locations then
+  Locations = {}
+end
+
+local _args = args:split(" ")
+
+if _args[1] == "list" then
+  print("  Saved room keys:")
+  local maxlen = 5
+  local sortedKeys = {}
+  for k in pairs(Locations) do
+    table.insert(sortedKeys, k)
+    maxlen = math.max(#k, maxlen)
+  end
+  table.sort(sortedKeys)
+  for _, key in ipairs(sortedKeys) do
+    local v = Locations[key]
+    local k = string.lpad(key, maxlen, " ")
+    print(string.format("  %s - %s", k, v))
+  end
+  echo("\n")
+end
+
+local name = _args[1]
+local key = _args[2]
+
+if (not name) or (not key) then
+  return
+end
+
+if ((name == "delete") or (name == "remove")) then
+  if (key == "all") then
+    print("  Removing all keys.")
+    Locations = {}
+    return
+  else
+    Locations = table.removeKey(Locations, key)
+    print("  Removed key '" .. key .. "'.")
+    return
+  end
+end
+
+print("  Saving " .. key .. " as '" .. name .. "'.")
+Locations[name] = key</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^key( (.*))?$</regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>teleport to key</name>
+				<script>local name = matches[3] or ""
+
+local key = Locations[name]
+
+if not key then
+  print("  Invalid key: '" .. name .. "'")
+  return
+end
+
+print("  Teleporting to '" .. name .. "'...")
+send("cast 'teleport' " .. key)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^_(tp|teleport) (\w+)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>portal to key</name>
+				<script>local name = matches[3] or ""
+local dir = matches[5]
+
+if not dir then
+  print("  Invalid direction. _port &lt;name&gt; &lt;dir&gt;")
+  return
+end
+
+local key = Locations[name]
+
+if not key then
+  print("  Invalid key: '" .. name .. "'")
+  return
+end
+
+print("  Portal to '" .. name .. "'...")
+send("cast 'portal' " .. dir .. " " .. key)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^_port(al)? (\w+)( (up|down|west|east|north|south|s|e|n|w|u|d)?)?$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>scry key</name>
+				<script>local name = matches[2] or ""
+
+local key = Locations[name]
+
+if not key then
+  print("  Invalid key: '" .. name .. "'")
+  return
+end
+
+print("  Scrying '" .. name .. "'...")
+send("cast 'scry' " .. key)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^_scry (\w+)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>watch room key</name>
+				<script>local name = matches[3] or ""
+
+local key = Locations[name]
+
+if not key then
+  print("  Invalid key: '" .. name .. "'")
+  return
+end
+
+print("  Watching '" .. name .. "'...")
+send("cast 'watch room' " .. key)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^_(wr|watch|watch room) (\w+)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>out</name>
+				<script>local name = "out"
+local key = Locations[name]
+
+local speed = matches[2] or "n"
+local new = matches[4]
+if new then
+  local newkey = Locations[new]
+  if newkey then
+    print("  Quickport set to '" .. new .. "' (" .. newkey .. ")")
+    Locations["out"] = newkey
+    return
+  else
+    print("  Quickport set to '" .. new .. "'")
+    Locations["out"] = new
+    return
+  end
+end
+
+if not key then
+  print("  Invalid key: '" .. name .. "'")
+  return
+end
+
+print("  Quick teleporting to '" .. name .. "'...")
+send("cast " .. speed .. " 'teleport' " .. key)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^(q)?out( (.*))?$</regex>
+			</Alias>
+		</Alias>
+	</AliasPackage>
 	<ActionPackage />
 	<ScriptPackage />
 	<KeyPackage />

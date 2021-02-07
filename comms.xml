@@ -1,7 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.001">
-	<TriggerPackage />
+	<TriggerPackage>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>tells</name>
+			<script>local who = matches[2]
+local target = matches[3]
+local what = matches[4]
+local prefix = ""
+if target == "the group" then
+  prefix = "[GT] "
+end
+
+local timestamp = getTime(true, 'HH:mm:ss')
+local color = "&lt;127,255,127&gt;"
+tells:decho(string.format(
+  "%s[ %s ] %s%s: %s\n",
+  color,
+  timestamp,
+  prefix,
+  who,
+  what
+))</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^(.*) tells (you|the group) '(.*)'$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>narrates + prays</name>
+			<script>local who = matches[2]
+local channel = matches[3]
+local what = matches[4]
+
+local colors = {
+  ["narrates"] = "&lt;130,135,0&gt;",
+  ["prays"] = "&lt;130,0,135&gt;",
+}
+
+local timestamp = getTime(true, 'HH:mm:ss')
+local color = colors[channel]
+narrates:decho(string.format(
+  "%s[ %s ] %s: %s\n",
+  color,
+  timestamp,
+  who,
+  what
+))</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^(.*) (narrates|prays) '(.*)'$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+	</TriggerPackage>
 	<TimerPackage />
 	<AliasPackage />
 	<ActionPackage />
