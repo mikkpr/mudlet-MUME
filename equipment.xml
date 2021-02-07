@@ -157,8 +157,12 @@
 				<string>black horn shortbow</string>
 				<string>a mighty dwarven axe</string>
 				<string>fine grey cloak</string>
+				<string>an iron ring</string>
+				<string>a small pouch</string>
 			</regexCodeList>
 			<regexCodePropertyList>
+				<integer>0</integer>
+				<integer>0</integer>
 				<integer>0</integer>
 				<integer>0</integer>
 				<integer>0</integer>

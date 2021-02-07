@@ -31,8 +31,8 @@ end</script>
 			<colorTriggerFgColor>#000000</colorTriggerFgColor>
 			<colorTriggerBgColor>#000000</colorTriggerBgColor>
 			<regexCodeList>
-				<string>^(\w+) dismounts from ([\w ]+), and (stops) riding (him|her|it).$</string>
-				<string>^(\w+) picks up ([\w ]+)'s reins and (starts) riding (him|her|it).$</string>
+				<string>^(\w+) (\(.*\) )?dismounts from ([\w ]+), and (stops) riding (him|her|it).$</string>
+				<string>^(\w+) (\(.*\) )?picks up ([\w ]+)'s reins and (starts) riding (him|her|it).$</string>
 			</regexCodeList>
 			<regexCodePropertyList>
 				<integer>1</integer>

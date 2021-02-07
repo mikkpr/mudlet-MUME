@@ -184,7 +184,8 @@ send("cast 'watch room' " .. key)</script>
 				<script>local name = "out"
 local key = Locations[name]
 
-local new = matches[3]
+local speed = matches[2] or "n"
+local new = matches[4]
 if new then
   local newkey = Locations[new]
   if newkey then
@@ -204,10 +205,10 @@ if not key then
 end
 
 print("  Quick teleporting to '" .. name .. "'...")
-send("cast q 'teleport' " .. key)</script>
+send("cast " .. speed .. " 'teleport' " .. key)</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>^out( (.*))?$</regex>
+				<regex>^(q)?out( (.*))?$</regex>
 			</Alias>
 		</Alias>
 	</AliasPackage>

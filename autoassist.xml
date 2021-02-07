@@ -38,7 +38,7 @@ end</script>
 				<colorTriggerFgColor>#000000</colorTriggerFgColor>
 				<colorTriggerBgColor>#000000</colorTriggerBgColor>
 				<regexCodeList>
-					<string>^(\w+) (strongly )?(slashes|stabs|cleaves|pierces|hits|crushes|shoots)</string>
+					<string>^(\w+) (\(.*\) )?(strongly )?(slashes|stabs|cleaves|pierces|hits|crushes|shoots)</string>
 				</regexCodeList>
 				<regexCodePropertyList>
 					<integer>1</integer>

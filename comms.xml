@@ -12,7 +12,7 @@ if target == "the group" then
   prefix = "[GT] "
 end
 
-local timestamp = getTime(true, 'HH:MM:ss')
+local timestamp = getTime(true, 'HH:mm:ss')
 local color = "&lt;127,255,127&gt;"
 tells:decho(string.format(
   "%s[ %s ] %s%s: %s\n",
@@ -50,7 +50,7 @@ local colors = {
   ["prays"] = "&lt;130,0,135&gt;",
 }
 
-local timestamp = getTime(true, 'HH:MM:ss')
+local timestamp = getTime(true, 'HH:mm:ss')
 local color = colors[channel]
 narrates:decho(string.format(
   "%s[ %s ] %s: %s\n",
