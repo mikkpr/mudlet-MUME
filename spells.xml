@@ -49,10 +49,11 @@ echo(string.format("    [ spell: '%s' ]\n", MUME.spell or ""))</script>
   ["spcs"] = function() expandAlias("spell colour spray", false) end,
   ["spde"] = function() expandAlias("spell dispel evil", false) end,
   ["speq"] = function() expandAlias("spell earthquake", false) end,
+  ["spsg"] = function() expandAlias("spell shocking grasp", false) end,
 }):case(matches[1])</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>^spha|splb|spbh|spfb|spbl|spsl|spcs|spde|speq$</regex>
+				<regex>^spha|splb|spbh|spfb|spbl|spsl|spcs|spde|speq|spsg$</regex>
 			</Alias>
 		</Alias>
 		<Alias isActive="yes" isFolder="no">

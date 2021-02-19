@@ -159,8 +159,22 @@
 				<string>fine grey cloak</string>
 				<string>an iron ring</string>
 				<string>a small pouch</string>
+				<string>a steel-shafted mattock</string>
+				<string>a scorched, grisly fur</string>
+				<string>engraved broadsword</string>
+				<string>claymore</string>
+				<string>a smoky obsidian amulet</string>
+				<string>shield of Arthedain</string>
+				<string>shields of Arthedain</string>
 			</regexCodeList>
 			<regexCodePropertyList>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
 				<integer>0</integer>
 				<integer>0</integer>
 				<integer>0</integer>

@@ -120,7 +120,7 @@ print("  Teleporting to '" .. name .. "'...")
 send("cast 'teleport' " .. key)</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>^_(tp|teleport) (\w+)$</regex>
+				<regex>^_(tp|tele|teleport) (\w+)$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>portal to key</name>
@@ -204,7 +204,7 @@ if not key then
   return
 end
 
-print("  Quick teleporting to '" .. name .. "'...")
+print(" Teleporting ("..speed..") to '" .. name .. "'...")
 send("cast " .. speed .. " 'teleport' " .. key)</script>
 				<command></command>
 				<packageName></packageName>
