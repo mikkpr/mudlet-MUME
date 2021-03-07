@@ -93,6 +93,35 @@ send(command)
 			<packageName></packageName>
 			<regex>^s(t|m)(\d)?$</regex>
 		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>cast by spell name</name>
+			<script>local spell
+local speed
+local num
+
+if matches[5] ~= "" then
+  spell = matches[5] or MUME.spell
+else
+  spell = MUME.spell
+end
+
+if matches[2] ~= "" then
+  speed = matches[2] or MUME.speed
+else
+  speed = MUME.speed
+end
+
+if matches[3] ~= "" then
+  num = matches[3] or "1"
+else
+  num = "1"
+end
+
+send(string.format("cast %s '%s' %s.%s", speed, spell, num, MUME.target))</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^(q|f|n|c|t)?ss(\d)?( (.*))?$</regex>
+		</Alias>
 	</AliasPackage>
 	<ActionPackage />
 	<ScriptPackage>

@@ -166,8 +166,18 @@
 				<string>a smoky obsidian amulet</string>
 				<string>shield of Arthedain</string>
 				<string>shields of Arthedain</string>
+				<string>ornate, steel-shafted warhammer</string>
+				<string>great warsword</string>
+				<string>a black metal staff</string>
+				<string>a copper ring</string>
+				<string>a golden ruby ring</string>
 			</regexCodeList>
 			<regexCodePropertyList>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
 				<integer>0</integer>
 				<integer>0</integer>
 				<integer>0</integer>

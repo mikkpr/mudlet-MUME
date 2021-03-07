@@ -5,6 +5,10 @@
 		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 			<name>tells</name>
 			<script>local who = matches[2]
+
+if (string.find(who, ' ')) then
+  return
+end
 local target = matches[3]
 local what = matches[4]
 local prefix = ""

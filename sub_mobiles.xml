@@ -472,6 +472,9 @@ local subs = {
   ["A large and twisted beast lurks in the rotten pool"] = "A tentacled beast",
   ["A small reptile with large eyes scurries along the walls"] = "A cave gecko",
   ["A pitiful slave toils wearily, assembling a crude barricade"] = "A pitiful slave",
+  ["A great wolf with a sable coat glares around with red eyes"] = "A dire wolf",
+  ["A strong orc is sneaking around here, trying to hide"] = "An expelled orc",
+  ["A huge stone troll looms overhead, ready to crush your body"] = "A huge stone troll",
 }
 
 local str = matches[2]:gsub(" %(.*%)", ""):gsub("%.$", "")

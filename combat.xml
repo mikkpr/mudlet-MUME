@@ -78,7 +78,8 @@ send("escape " .. reverseDirs[dir])</script>
   ["bdt"] = "bash disengage",
   ["kt"] = "kill",
   ["tt"] = "track",
-  ["wt"] = "where"
+  ["wt"] = "where",
+  ["xt"] = "examine",
 }
 local target = MUME.target or ""
 if string.sub(matches[3], #matches[3]) == "m" then
@@ -98,7 +99,7 @@ end
 send(string.format("%s %s%s", command, formattedNum, target))</script>
 			<command></command>
 			<packageName></packageName>
-			<regex>^((tt|tm|wt|wm|ht|hm|bst|bsm|shm|sht|bt|bm|bdt|bdm|kt|km)([0-9])*)( \w+)?$</regex>
+			<regex>^((xt|tt|tm|wt|wm|ht|hm|bst|bsm|shm|sht|bt|bm|bdt|bdm|kt|km)([0-9])*)( \w+)?$</regex>
 		</Alias>
 		<Alias isActive="yes" isFolder="no">
 			<name>target</name>
@@ -136,6 +137,38 @@ echo(string.format("    [ mount: %s ]\n", MUME.mount or "")) </script>
 				<packageName></packageName>
 				<regex>^(xm|mount)( (.*))?$</regex>
 			</Alias>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>move + hit</name>
+			<script>local flee = matches[3]
+local dir = matches[2]
+local num = matches[4] or "1"
+
+send(dir)
+expandAlias("ht" .. num)
+
+if flee ~= "" then
+  send("flee")
+end</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^h(n|e|s|w|u|d)(f)?(\d)?$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>bash + hit</name>
+			<script>local flee = matches[3]
+local dir = matches[2]
+local num = matches[4] or "1"
+
+send(dir)
+expandAlias("bt" .. num)
+
+if flee ~= "" then
+  send("flee")
+end</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^h(n|e|s|w|u|d)(f)?(\d)?$</regex>
 		</Alias>
 	</AliasPackage>
 	<ActionPackage />
