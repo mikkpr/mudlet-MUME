@@ -11,7 +11,7 @@
 			<mCommand></mCommand>
 			<packageName></packageName>
 			<mFgColor>#ffffff</mFgColor>
-			<mBgColor>#151515</mBgColor>
+			<mBgColor>#282828</mBgColor>
 			<mSoundFile></mSoundFile>
 			<colorTriggerFgColor>#000000</colorTriggerFgColor>
 			<colorTriggerBgColor>#000000</colorTriggerBgColor>
@@ -129,7 +129,7 @@
 			<mCommand></mCommand>
 			<packageName></packageName>
 			<mFgColor>#ffffff</mFgColor>
-			<mBgColor>#151515</mBgColor>
+			<mBgColor>#282828</mBgColor>
 			<mSoundFile></mSoundFile>
 			<colorTriggerFgColor>#000000</colorTriggerFgColor>
 			<colorTriggerBgColor>#000000</colorTriggerBgColor>
@@ -171,8 +171,10 @@
 				<string>a black metal staff</string>
 				<string>a copper ring</string>
 				<string>a golden ruby ring</string>
+				<string>burnished hewing-spear</string>
 			</regexCodeList>
 			<regexCodePropertyList>
+				<integer>0</integer>
 				<integer>0</integer>
 				<integer>0</integer>
 				<integer>0</integer>

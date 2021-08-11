@@ -7,7 +7,7 @@
 			<script>if MUME.autoride == "off" then return end
 
 local who = string.lower(matches[2])
-local verb = matches[4]
+local verb = matches[5]
 local action
 
 if verb == "starts" then

@@ -255,7 +255,7 @@ local subs = {
   ["A bee flies around here, collecting nectar from the flowers"] = "A bee",
   ["A brown snake watches you"] = "A brown snake",
   ["A wild bull seems ready to charge you"] = "A wild bull",
-  ["A small brown snake is slithering around here"] = "A brown snake",
+  ["A small brown snake is slithering around here"] = "A small brown snake",
   ["A fat carp swims here"] = "A carp",
   ["A dun-coloured grouse is sitting still in the heather"] = "A red grouse",
   ["A harsh orkish veteran is here, heavily scarred but ready to fight"] = "A harsh orkish veteran",
@@ -307,7 +307,7 @@ local subs = {
   ["A strange bat-like creature is flitting around"] = "A cavern-wing",
   ["A brigand, looking at your nice purse, is sneaking here"] = "A mean brigand",
   ["A thief is here looking for some stranger to rob"] = "A thief",
-  ["A huge, old and hoary willow tree looms above you"] = "&lt;firebrick&gt;Old Man Willow",
+  ["A huge, old and hoary willow tree looms above you"] = "&lt;firebrick&gt;Old Man Willow&lt;reset&gt;",
   ["A female Ohurk-uai cook is here, planning to prepare the next meal"] = "An Ohurk-uai cook",
   ["The spirit of a mighty warrior greets you with an evil laughter"] = "An undead chieftain",
   ["A powerful, squat orc captain eyes you with contempt and scorn"] = "&lt;firebrick&gt;Vurgl the Orkish captain",
@@ -320,11 +320,11 @@ local subs = {
   ["A barn-owl is here, looking for easy prey"] = "A barn-owl",
   ["A duck is here, quacking happily"] = "A duck",
   ["A shadowy haunt floats here, oblivious to your presence"] = "A haunt",
-  ["A wicked black witch glares at you with mad eyes"] = "&lt;firebrick&gt;The witch",
+  ["A wicked black witch glares at you with mad eyes"] = "&lt;firebrick&gt;The witch&lt;reset&gt;",
   ["A swarthy, little bandit advances forward"] = "A swarthy bandit",
   ["A worm is here slithering around"] = "A worm",
   ["A large, dangerous-looking green snake is coiled up here"] = "A green snake",
-  ["Big John is swiftly moving around, hiding in the shadows"] = "&lt;firebrick&gt;Big John, the chief brigand",
+  ["Big John is swiftly moving around, hiding in the shadows"] = "&lt;firebrick&gt;Big John, the chief brigand&lt;reset&gt;",
   ["A grey wolf is here, thin from starvation"] = "A starved grey wolf",
   ["A wild sheep with a short, greyish coat grazes here"] = "A sheep",
   ["A powerful ram stands here, poised and alert"] = "A ram",
@@ -343,17 +343,17 @@ local subs = {
   ["A black snake hurries towards you with sly intentions"] = "A black snake",
   ["A large brown snake with black patches is coiled here"] = "A dreadful snake",
   ["A cute, fluffy owlet is waiting here for its mother to return with food"] = "A fluffy owlet",
-  ["A shady man looks commanding"] = "&lt;firebrick&gt;A bandit leader",
+  ["A shady man looks commanding"] = "&lt;firebrick&gt;A bandit leader&lt;reset&gt;",
   ["A spirit floats towards you and howls with an evil laughter"] = "A spirit",
   ["A shade is here, shrouded in an inky blackness"] = "A shade",
   ["A goat is here, grazing in the hills"] = "A goat",
   ["A young goat playfully charges and hops away"] = "A kid",
-  ["A giant forest troll, limber and strong, protects the burrow"] = "&lt;firebrick&gt;Urgorl",
+  ["A giant forest troll, limber and strong, protects the burrow"] = "&lt;firebrick&gt;Urgorl&lt;reset&gt;",
   ["The lowly bent shape of a forest troll stands before you"] = "A gnarled forest troll",
   ["A snaga orc stares at you with interest"] = "A snaga orc",
   ["A bloodthirsty orc stands here, hell-bent on battle"] = "A bloodthirsty orc",
   ["An aged man with a cadaverous appearance is here"] = "&lt;firebrick&gt;The liche",
-  ["A big cavebear is padding around here"] = "&lt;firebrick&gt;A cavebear",
+  ["A big cavebear is padding around here"] = "&lt;firebrick&gt;A cavebear&lt;reset&gt;",
   ["A shadow suddenly leaves its place on the wall, trying to reach your neck"] = "A shadow",
   ["A sly cat prepares to pounce from its grassy hiding place"] = "A sly grass cat",
   ["A cow stands here, chewing her cud"] = "A cow",
@@ -374,6 +374,7 @@ local subs = {
   ["A mole is looking out of a mole-hill here"] = "A mole",
   ["An angry bee is here, collecting nectar from all the flowers of the garden"] = "An angry bee",
   ["A renegade uruk is here, dirty and ragged"] = "A dirty uruk",
+  ["A dirty uruk stands here, the leader of a small pack of renegades"] = "A renegade uruk",
   ["A bulky cave troll is here, looking like a massive pile of stone"] = "A bulky cave troll",
   ["A blue dragonfly is circling around"] = "A blue dragonfly",
   ["A big, brown, angry-looking bear is here"] = "A brown bear",
@@ -475,6 +476,73 @@ local subs = {
   ["A great wolf with a sable coat glares around with red eyes"] = "A dire wolf",
   ["A strong orc is sneaking around here, trying to hide"] = "An expelled orc",
   ["A huge stone troll looms overhead, ready to crush your body"] = "A huge stone troll",
+  ["A large, yellow crab is crawling around here"] = "A yellow crab",
+  ["A woodchuck is watching for enemies here"] ="A woodchuck",
+  ["A sharp-eyed hawk is here stalking some prey"] = "A hawk",
+  ["A starving cow stands here, looking for a patch of grass"] = "A starving cow",
+  ["A small and gaunt man, dressed in brown, looks at you from the shadows"] = "&lt;firebrick&gt;A gaunt man&lt;reset&gt;",
+  ["Khuzur the Olog-hai is standing here"] = "&lt;firebrick&gt;Khuzur the Olog-hai&lt;reset&gt;",
+  ["A great wolf with coal-black eyes stares intently at you, drooling saliva"] = "A great werewolf",
+  ["A Durbuk-hai warrior stands here with a frenzied gleam in his eyes"] = "A reckless Durbuk-hai warrior",
+  ["An elite Durbuk-hai guard is standing here, armed with spear and shield"] = "An agile Durbuk-hai spear-guard",
+  ["A lithe, devious-looking Durbuk-hai shaman is standing here"] = "A cunning Durbuk-hai shaman",
+  ["A deft Durbuk-hai slinger lurks in the shadows"] = "A deft Durbuk-hai slinger",
+  ["A scrawny Durbuk-hai orc rummages through the filth"] = "A scrawny Durbuk-hai orc",
+  ["A bulky orc commander stands here with a sinister look on his face"] = "&lt;firebrick&gt;Ghagul of the Durbuk-hai&lt;reset&gt;",
+  ["A veteran of the Durbuk-hai watches the area, alert and poised for combat"] = "A veteran Durbuk-kalarog",
+  ["A Durbuk-hai warrior is here, ill-equipped but ready to fight for his tribe"] = "A crudely armed Durbuk-hai warrior",
+  ["A soldier dressed in polished equipment eyes you warily"] = "A black-haired soldier",
+  ["A Dunlending Captain is here, overseeing his men"] = "A Dunlending Captain",
+  ["A cowled sorcerer, in dark robes, gestures when he sees you"] = "&lt;firebrick&gt;A black sorcerer&lt;reset&gt;",
+  ["A young, starving bear is here, viciously snarling"] = "A young, starving bear",
+  ["A great, soot-black mother bear is here, preying for victims"] = "&lt;firebrick&gt;A soot-black bear&lt;reset&gt;",
+  ["A quail stands motionless"] = "A quail",
+  ["A dense patch of dark ferns grows in the shade"] = "A shady patch of ferns",
+  ["A strong wisent snorts and shakes his horns in the underbrush"] = "A dark wisent",
+  ["A great, dark wolf stands here, sniffing the air"] = "A werewolf",
+  ["An iron-grey wolf stands here, grizzled from countless hunts"] = "A grizzled werewolf",
+  ["A brown snail is crawling across the ground here leaving a slimy trail behind"] = "A brown snail",
+  ["A skeletal warrior is staring angrily at the surroundings"] = "A skeletal warrior",
+  ["A rooster is here, strutting about"] = "A rooster",
+  ["A large, fanged spider patrols the area"] = "A large, fanged spider",
+  ["A menacing looking tree is here, just waiting for a lost wanderer"] = "A menacing-looking tree",
+  ["Some dark, thick writhing vines whip all around you"] = "A thick tangle of dark vines",
+  ["A sturdy billy goat stands here, proudly protecting his goats"] = "A sturdy billy goat",
+  ["A Stoor child is playing peacefully here"] = "A Stoor child",
+  ["A Stoor goes about his daily business"] = "A Stoor",
+  ["A hobbit fishtrader loudly advertises his fresh fish here"] = "A hobbit fishtrader",
+  ["The Chief of the Stoor Village is here"] = "The Stoor village chief",
+  ["A fisherhobbit is cruising the River in his reed boat, looking for fish"] = "A fisherhobbit",
+  ["A small, wild lion cub covered in soft, yellow fur is watching you cautiously"] = "A wild lion cub",
+  ["A grey hare stands alert, looking and listening for predators"] = "A lones-hare",
+  ["A small wood sprite is sneaking around here"] = "A wood sprite",
+  ["A woman stands here carefully guarding her village"] = "An archer",
+  ["A woman is here, looking for someone to chat with"] = "A woman",
+  ["An old tailor is sitting here, working with a piece of fabric"] = "An old tailor",
+  ["The baker looks at you calmly, wiping flour from his face with one hand"] = "A baker",
+  ["A little boy is here, running around"] = "A little boy",
+  ["A large grocer is here, waiting to buy or sell some goods"] = "A grocer",
+  ["A rugged-looking man is standing here"] = "A man",
+  ["A strong bulldog, with sharp teeth, growls at strangers"] = "A bulldog",
+  ["A prisoner is sitting here, looking at you with sad eyes"] = "A prisoner",
+  ["A large, heavyset man stands here"] = "A doorwarden",
+  ["A burly bodyguard stands here, a dour expression on his face"] = "A strong bodyguard",
+  ["An aged man, with a long scar on his right cheek, is here"] = "A scarred man",
+  ["A gnarly tangle of vines writhes across the ground"] = "A gnarly tangle of vines",
+  ["An olog-hai troll is here, watching the tunnel entrance"] = "An olog-hai troll",
+  ["An elven guard is wandering here, keeping the peace"] = "An elven guard",
+  ["An elven guard is standing here at his post"] = "An elven guard",
+  ["An elven woman is here merrily walking along"] = "An elven woman",
+  ["A small, loyal beagle is here, eager to please"] = "A beagle",
+  ["An elf is here walking around"] = "An elf",
+  ["The village priest welcomes you to his simple temple"] = "A priest",
+  ["An elven boy is running about here"] = "An elven boy",
+  ["A lonely, sad-looking elf is sitting here in deep thought"] = "A lonely elf",
+  ["An elf sits here delving into some old tomes of elven lore"] = "A studious elf",
+  ["Aldereon the ancient Noldo stands here, gazing at a forgotten past"] = "&lt;firebrick&gt;Aldereon&lt;reset&gt;",
+  ["An elven huntsman is standing here, watching for signs of evil"] = "An elven huntsman",
+  ["A young man in ranger's attire is here, travelling the roads"] = "A young ranger",
+  ["A pretty elven girl is strolling around here"] = "An elven girl",
 }
 
 local str = matches[2]:gsub(" %(.*%)", ""):gsub("%.$", "")
@@ -500,6 +568,13 @@ temp = temp or string.match(matches[2], "The shadow of (.*) is floating here")
 temp = temp or string.match(matches[2], "An? (.*) is sleeping here")
 temp = temp or string.match(matches[2], "An? (.*) is lying here,")
 temp = temp or string.match(matches[2], "An? (.*) is standing here")
+
+local warning = string.match(matches[2], "Foul webs span across Mirkwood, engulfing the exit (.*) with their complex patterns")
+if warning then
+  cinsertText(string.format("&lt;yellow&gt;%s&lt;ansiLightBlack&gt;", prefix))
+end
+
+
 if temp then
   cinsertText(string.format("&lt;white&gt;%s&lt;ansiLightBlack&gt;", prefix))
   
@@ -509,6 +584,18 @@ if temp then
   selectString("(hidden)", 1)
   fg("SlateGrey")
   return
+end
+
+local corpse = string.match(matches[2], "The corpse of (.*) is lying here.") or string.match(matches[2], "The butchered corpse of (.*) is lying here.")
+if corpse then
+
+  selectString("The corpse of", 1)
+  fg("dark_slate_gray")
+  selectString("The butchered corpse of", 1)
+  fg("dark_slate_gray")
+  selectString("is lying here.", 1)
+  fg("dark_slate_gray")
+  deselect()
 end</script>
 			<triggerType>0</triggerType>
 			<conditonLineDelta>0</conditonLineDelta>

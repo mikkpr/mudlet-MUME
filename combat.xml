@@ -168,7 +168,7 @@ if flee ~= "" then
 end</script>
 			<command></command>
 			<packageName></packageName>
-			<regex>^h(n|e|s|w|u|d)(f)?(\d)?$</regex>
+			<regex>^b(n|e|s|w|u|d)(f)?(\d)?$</regex>
 		</Alias>
 	</AliasPackage>
 	<ActionPackage />

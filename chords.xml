@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage />
+	<TimerPackage />
+	<AliasPackage />
+	<ActionPackage />
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>main</name>
+			<packageName></packageName>
+			<script>-- defines a key chord to run the given code
+-- chord: string of space-separated characters, e.g "a b"
+chords = {
+  ['states'] = {},
+  ['actions'] = {},
+}
+local keymappings = {
+        ['q'] = mudlet.key.Q,
+        ['w'] = mudlet.key.W,
+        ['e'] = mudlet.key.E,
+        ['r'] = mudlet.key.R,
+        ['t'] = mudlet.key.T,
+        ['y'] = mudlet.key.Y,
+        ['u'] = mudlet.key.U,
+        ['i'] = mudlet.key.I,
+        ['o'] = mudlet.key.O,
+        ['p'] = mudlet.key.P,
+        ['a'] = mudlet.key.A,
+        ['s'] = mudlet.key.S,
+        ['d'] = mudlet.key.D,
+        ['f'] = mudlet.key.F,
+        ['g'] = mudlet.key.G,
+        ['h'] = mudlet.key.H,
+        ['j'] = mudlet.key.J,
+        ['k'] = mudlet.key.K,
+        ['l'] = mudlet.key.L,
+        ['z'] = mudlet.key.Z,
+        ['x'] = mudlet.key.X,
+        ['c'] = mudlet.key.C,
+        ['v'] = mudlet.key.V,
+        ['b'] = mudlet.key.B,
+        ['n'] = mudlet.key.N,
+        ['m'] = mudlet.key.M
+}
+
+function CHORD(chord, code)
+  local csplit = string.split(chord)
+  
+  for key, val in ipairs(csplit) do
+  
+  end
+  -- disableKey(group)
+  -- enableKey(group)
+  -- isActive(name, type)
+    -- type: alias, trigger, timer, keybind
+  -- killKey
+  -- tempKey([modifier], key code, lua)
+  
+  --
+  --
+  --
+  
+  -- split chord by space
+  --tempKey(mudlet.keymodifier.Control, 
+end
+
+CHORD('a b', [[
+print('a b')
+]])</script>
+			<eventHandlerList />
+		</Script>
+	</ScriptPackage>
+	<KeyPackage />
+	<HelpPackage>
+		<helpURL></helpURL>
+	</HelpPackage>
+</MudletPackage>

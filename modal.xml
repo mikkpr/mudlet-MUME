@@ -142,14 +142,14 @@ send("\n")</script>
 			<script></script>
 			<command></command>
 			<keyCode>-1</keyCode>
-			<keyModifier>-1</keyModifier>
+			<keyModifier>0</keyModifier>
 			<KeyGroup isActive="yes" isFolder="yes">
 				<name>quickalias (letters)</name>
 				<packageName></packageName>
 				<script></script>
 				<command></command>
 				<keyCode>-1</keyCode>
-				<keyModifier>-1</keyModifier>
+				<keyModifier>0</keyModifier>
 				<Key isActive="yes" isFolder="no">
 					<name>quickalias A</name>
 					<packageName></packageName>
@@ -365,7 +365,7 @@ send("\n")</script>
 				<script></script>
 				<command></command>
 				<keyCode>-1</keyCode>
-				<keyModifier>-1</keyModifier>
+				<keyModifier>0</keyModifier>
 				<Key isActive="yes" isFolder="no">
 					<name>quickalias 0</name>
 					<packageName></packageName>
@@ -453,7 +453,7 @@ send("\n")</script>
 				<script></script>
 				<command></command>
 				<keyCode>-1</keyCode>
-				<keyModifier>-1</keyModifier>
+				<keyModifier>0</keyModifier>
 				<Key isActive="yes" isFolder="no">
 					<name>west</name>
 					<packageName></packageName>
@@ -509,7 +509,7 @@ send("\n")</script>
 				<script></script>
 				<command></command>
 				<keyCode>-1</keyCode>
-				<keyModifier>-1</keyModifier>
+				<keyModifier>0</keyModifier>
 				<Key isActive="yes" isFolder="no">
 					<name>open</name>
 					<packageName></packageName>
@@ -524,7 +524,7 @@ send("\n")</script>
 					<script></script>
 					<command></command>
 					<keyCode>-1</keyCode>
-					<keyModifier>-1</keyModifier>
+					<keyModifier>0</keyModifier>
 					<Key isActive="yes" isFolder="no">
 						<name>open south</name>
 						<packageName></packageName>
@@ -603,7 +603,7 @@ resetDoorKeys()</script>
 					<script></script>
 					<command></command>
 					<keyCode>-1</keyCode>
-					<keyModifier>-1</keyModifier>
+					<keyModifier>0</keyModifier>
 					<Key isActive="yes" isFolder="no">
 						<name>close south</name>
 						<packageName></packageName>
@@ -682,7 +682,7 @@ resetDoorKeys()</script>
 					<script></script>
 					<command></command>
 					<keyCode>-1</keyCode>
-					<keyModifier>-1</keyModifier>
+					<keyModifier>0</keyModifier>
 					<Key isActive="yes" isFolder="no">
 						<name>unlock south</name>
 						<packageName></packageName>
@@ -761,7 +761,7 @@ resetDoorKeys()</script>
 					<script></script>
 					<command></command>
 					<keyCode>-1</keyCode>
-					<keyModifier>-1</keyModifier>
+					<keyModifier>0</keyModifier>
 					<Key isActive="yes" isFolder="no">
 						<name>lock south</name>
 						<packageName></packageName>
@@ -840,7 +840,7 @@ resetDoorKeys()</script>
 					<script></script>
 					<command></command>
 					<keyCode>-1</keyCode>
-					<keyModifier>-1</keyModifier>
+					<keyModifier>0</keyModifier>
 					<Key isActive="yes" isFolder="no">
 						<name>pick south</name>
 						<packageName></packageName>
@@ -919,7 +919,7 @@ resetDoorKeys()</script>
 					<script></script>
 					<command></command>
 					<keyCode>-1</keyCode>
-					<keyModifier>-1</keyModifier>
+					<keyModifier>0</keyModifier>
 					<Key isActive="yes" isFolder="no">
 						<name>scout south</name>
 						<packageName></packageName>
@@ -997,7 +997,7 @@ resetDoorKeys()</script>
 					<script></script>
 					<command></command>
 					<keyCode>-1</keyCode>
-					<keyModifier>-1</keyModifier>
+					<keyModifier>0</keyModifier>
 					<Key isActive="yes" isFolder="no">
 						<name>bash south</name>
 						<packageName></packageName>
@@ -1069,7 +1069,7 @@ resetDoorKeys()</script>
 				<script></script>
 				<command></command>
 				<keyCode>-1</keyCode>
-				<keyModifier>-1</keyModifier>
+				<keyModifier>0</keyModifier>
 				<Key isActive="yes" isFolder="no">
 					<name>ride</name>
 					<packageName></packageName>
