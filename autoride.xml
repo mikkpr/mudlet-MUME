@@ -1,116 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.001">
-	<TriggerPackage>
-		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-			<name>autoride</name>
-			<script>if MUME.autoride == "off" then return end
-
-local who = string.lower(matches[2])
-local verb = matches[5]
-local action
-
-if verb == "starts" then
-  action = "ride"
-else
-  action = "lead"
-end
-
-local comp = string.lower(MUME.leader)
-if comp == who then
-  send(action)
-end</script>
-			<triggerType>0</triggerType>
-			<conditonLineDelta>0</conditonLineDelta>
-			<mStayOpen>0</mStayOpen>
-			<mCommand></mCommand>
-			<packageName></packageName>
-			<mFgColor>#ff0000</mFgColor>
-			<mBgColor>#ffff00</mBgColor>
-			<mSoundFile></mSoundFile>
-			<colorTriggerFgColor>#000000</colorTriggerFgColor>
-			<colorTriggerBgColor>#000000</colorTriggerBgColor>
-			<regexCodeList>
-				<string>^(\w+) (\(.*\) )?dismounts from ([\w ]+), and (stops) riding (him|her|it).$</string>
-				<string>^(\w+) (\(.*\) )?picks up ([\w ]+)'s reins and (starts) riding (him|her|it).$</string>
-				<string>^(\w+) (\(.*\) )?grabs on to ([\w ]+)'s fur and (starts) riding (him|her|it).$</string>
-			</regexCodeList>
-			<regexCodePropertyList>
-				<integer>1</integer>
-				<integer>1</integer>
-				<integer>1</integer>
-			</regexCodePropertyList>
-		</Trigger>
-	</TriggerPackage>
+	<TriggerPackage />
 	<TimerPackage />
-	<AliasPackage>
-		<Alias isActive="yes" isFolder="no">
-			<name>leader</name>
-			<script>local leader = matches[3]
-
-if not MUME then MUME = {} end
-if not MUME.leader then
-  MUME.leader = "Gandalf"
-end
-
-if not leader then
-  cecho("You are following &lt;white&gt;" .. MUME.leader .. "&lt;reset&gt;.\n")
-else
-  cecho("You are now following &lt;white&gt;" .. leader .. "&lt;reset&gt;.\n")
-  MUME.leader = leader
-end</script>
-			<command></command>
-			<packageName></packageName>
-			<regex>^leader( (.*))?$</regex>
-		</Alias>
-		<Alias isActive="yes" isFolder="no">
-			<name>toggle autoride</name>
-			<script>if MUME.autoride == "on" then
-  MUME.autoride = "off"
-else
-  MUME.autoride = "on"
-end
-
-print("Autoride: [ " .. MUME.autoride .. " ]")</script>
-			<command></command>
-			<packageName></packageName>
-			<regex>^ar$</regex>
-		</Alias>
-	</AliasPackage>
+	<AliasPackage />
 	<ActionPackage />
-	<ScriptPackage>
-		<Script isActive="yes" isFolder="no">
-			<name>init</name>
-			<packageName></packageName>
-			<script>if not MUME then MUME = {} end</script>
-			<eventHandlerList />
-			<Script isActive="yes" isFolder="no">
-				<name>leader</name>
-				<packageName></packageName>
-				<script>if not MUME.leader then
-  MUME.leader = "Gandalf"
-end
-</script>
-				<eventHandlerList />
-			</Script>
-			<Script isActive="yes" isFolder="no">
-				<name>autoride</name>
-				<packageName></packageName>
-				<script>if not MUME.autoride then
-  MUME.autoride = "off"
-end</script>
-				<eventHandlerList />
-			</Script>
-			<Script isActive="yes" isFolder="no">
-				<name>autoassist</name>
-				<packageName></packageName>
-				<script>if not MUME.autoassist then
-  MUME.autoassist = "off"
-end</script>
-				<eventHandlerList />
-			</Script>
-		</Script>
-	</ScriptPackage>
+	<ScriptPackage />
 	<KeyPackage />
 	<HelpPackage>
 		<helpURL></helpURL>

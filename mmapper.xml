@@ -3,28 +3,7 @@
 <MudletPackage version="1.001">
 	<TriggerPackage />
 	<TimerPackage />
-	<AliasPackage>
-		<Alias isActive="yes" isFolder="no">
-			<name>doors</name>
-			<script>local dir = matches[4] or ""
-
-switch({
-  ["op"] = function() send("_open " .. dir, false) end,
-  ["cl"] = function() send("_close " .. dir, false) end,
-  ["bl"] = function() send("_block " .. dir, false) end,
-  ["ba"] = function() send("_bash " .. dir, false) end,
-  ["br"] = function() send("_break " .. dir, false) end,
-  ["ul"] = function() send("_unlock " .. dir, false) end,
-  ["lo"] = function() send("_lock " .. dir, false) end,
-  ["pi"] = function() send("_pick " .. dir, false) end,
-  ["kn"] = function() send("_knock " .. dir, false) end,
-  ["ro"] = function() send("_rock " .. dir, false) end,
-}):case(matches[2])</script>
-			<command></command>
-			<packageName></packageName>
-			<regex>^(op|cl|bl|ba|br|ul|lo|pi|kn|ro)( (.*))?$</regex>
-		</Alias>
-	</AliasPackage>
+	<AliasPackage />
 	<ActionPackage />
 	<ScriptPackage />
 	<KeyPackage />
